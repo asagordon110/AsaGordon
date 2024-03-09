@@ -1,0 +1,149 @@
+
+import java.util.*;
+
+public class RowdyNCalculator {
+  
+  public static void main(String [] args) {
+    Scanner scnr = new Scanner(System.in);
+    
+    String mySchool = "UTSA";
+    String mySemester = "FALL 2022";
+    String myClass = "CS 1083";
+    String mySection = "Section 005";
+    String title = "Project I";
+    String programName = "RowdyNCalculator";
+    String myName = "Written by ASA GORDON";
+    char addition = '+';
+      char subtraction = '-';
+      char multiplication = '*';
+      char division = '/';
+      char modulo = '%';
+      int numOfTimes;
+      boolean invalidInput = true;
+      double answer1;
+      int answer2;
+      double sum = 0.0;
+      double firstDouble;
+      double secondDouble;
+      
+    System.out.println(mySchool + " - " + mySemester + " - " + myClass + " - " + mySection + " - " + title + " - " + programName + " - " + myName + "\n");
+    //first line of output
+   
+    System.out.print("Please, enter the number of calculations you want to perform: ");
+    numOfTimes = scnr.nextInt();
+    for (int i = 1; i <= numOfTimes;){
+      answer1 = 0;
+      answer2 = 0;
+      if(invalidInput = false){
+        System.out.println("Wrong Operation.");
+        return;
+      }
+      System.out.println("Operation number " + i);
+      ++i;
+      
+      System.out.print("Please, select your choice of datatype of operation (i-integer, d-double): "); 
+      char dataType = scnr.next().charAt(0);
+      if (dataType != 'i' && dataType != 'd'){
+        System.out.println("Wrong Operation.");
+        continue;
+      }
+      //if i is entered:
+      if (dataType == 'i'){
+      System.out.print("Please, input the first integer value: "); 
+      int num1 = scnr.nextInt();
+      
+      System.out.print("Please, input the character of the operation (+, -, *, /, %): ");
+      char userOperation = scnr.next().charAt(0);
+      //if wrong operator is entered
+      if(userOperation != '+' && userOperation != '-' && userOperation != '*' && userOperation != '/' && userOperation != '%'){
+        System.out.println("Wrong Operation.");
+        continue;
+      }
+      System.out.print("Please, input the second integer value: "); 
+      int num2 = scnr.nextInt();
+      if(userOperation == '+'){
+      answer2 = (num1 + num2);
+      System.out.println("The result of adding " + num1 + " and " + num2 + " is " + answer2);
+      }
+      answer2 = (num1 - num2);
+      if (userOperation == '-') {
+        System.out.println("The result of subtracting " + num2 + " from " + num1 + " is " + answer2);
+      }
+      answer2 = (num1 * num2);
+      if (userOperation == '*'){
+        System.out.println("The result of multiplying " + num1 + " and " + num2 + " is " + answer2);
+      }
+      answer2 = (num1 / num2);
+      if(userOperation == '/') {
+      System.out.println("The result of dividing " + num1 + " by " + num2 + " is " + answer2);
+      }
+      answer2 = (num1 % num2);
+      if(userOperation == '%') {
+      System.out.println("The result of modulo operation of " + num1 + " by " + num2 + " is " + answer2);
+      }
+      
+      }
+      //if d is entered:
+      if (dataType == 'd'){
+        System.out.print("Please, input the first double value: ");
+        firstDouble = scnr.nextDouble();
+         System.out.print("Please, input the character of the operation (+, -, *, /, %): ");
+      char userOperation = scnr.next().charAt(0);
+       System.out.print("Please, input the second double value: "); 
+      secondDouble = scnr.nextDouble();
+       if(userOperation == '+'){
+      answer1 = (firstDouble + secondDouble);
+      System.out.println("The result of adding " + firstDouble + " and " + secondDouble + " is ");
+      System.out.printf("%.3f", answer1);
+      System.out.println("");
+      
+      }
+      answer1 = (firstDouble - secondDouble);
+      if (userOperation == '-') {
+        System.out.println("The result of subtracting " + firstDouble + " and " + secondDouble + " is ");
+        System.out.printf("%.3f", answer1);
+        System.out.println("");
+        
+      }
+      answer1 = (firstDouble * secondDouble);
+      if (userOperation == '*'){
+        System.out.println("The result of multiplying " + firstDouble + " and " + secondDouble + " is ");
+        System.out.printf("%.3f", answer1);
+        System.out.println("");
+      }
+      answer1 = (firstDouble / secondDouble);
+      if(userOperation == '/') {
+      System.out.println("The result of dividing " + firstDouble + " from " + secondDouble + " is ");
+      System.out.printf("%.3f", answer1);
+      System.out.println("");
+      }
+      answer1 = (firstDouble % secondDouble);
+      if(userOperation == '%') {
+      System.out.println("The result of modulo operation of " + firstDouble + " by " + secondDouble + " to three decimal places is ");
+      System.out.printf("%.3f" , answer1);
+      System.out.println("");
+      sum = (sum + answer1 + answer2);
+      }
+       
+      sum = (sum + answer1 + answer2);
+       
+      }
+      
+     
+          
+      }  
+       System.out.println("Thank you for using the RowdyNCalculator!");
+          System.out.print("The sum of the result of all " + numOfTimes + " equations is: ");
+          System.out.printf("%.3f", sum);
+    }
+   
+  }
+
+
+
+
+ 
+         
+      
+   
+  
